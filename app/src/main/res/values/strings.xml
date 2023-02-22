@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FirstApplication</string>
+    <string name="enter_weight">Enter Weight</string>
+    <string name="enter_height">Enter Height</string>
+    <string name="btn_Calculate_BMI">Calculate BMI</string>
+    <string name="txt_BMI">Your BMI is :</string>
+    <string name="BMI_MessageShownHere">Result</string>
+    <string name="Message_OverUnderWeight">Under or Over Weight</string>
+</resources>

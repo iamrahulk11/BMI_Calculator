@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/Enterweight_1"
+        android:hint="@string/enter_weight"
+        android:inputType="number"
+        android:layout_margin="15dp"
+        android:layout_marginTop="15dp"
+
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/Enterheight_1"
+        android:hint="@string/enter_height"
+        android:inputType="number"
+        android:layout_margin="15dp"
+        android:layout_below="@id/Enterweight_1"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_below="@id/Enterheight_1"
+        android:id="@+id/Calculate_BMI"
+        android:text="@string/btn_Calculate_BMI"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"
+
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/result"
+            android:layout_centerHorizontal="true"
+            android:textSize="35sp"
+            android:text="@string/txt_BMI"
+            android:id="@+id/txt_Bmi"
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/message_underORoverWeight"
+            android:id="@+id/result"
+            android:textSize="35sp"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/BMI_MessageShownHere"
+            android:layout_margin="20dp"
+             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/message_underORoverWeight"
+            android:layout_alignParentBottom="true"
+            android:text="@string/Message_OverUnderWeight"
+            android:textSize="30sp"
+            android:fontFamily="monospace"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+             />
+
+</RelativeLayout>
