@@ -5,64 +5,62 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-
     <EditText
+        android:id="@+id/enterweight_1"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/Enterweight_1"
+        android:layout_height="wrap_content"
         android:hint="@string/enter_weight"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:layout_margin="15dp"
-        android:layout_marginTop="15dp"
 
         />
 
     <EditText
+        android:id="@+id/enterheight_1"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/Enterheight_1"
+        android:layout_height="wrap_content"
         android:hint="@string/enter_height"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:layout_margin="15dp"
-        android:layout_below="@id/Enterweight_1"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/enterweight_1"
         />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_below="@id/Enterheight_1"
         android:id="@+id/Calculate_BMI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/enterheight_1"
         android:text="@string/btn_Calculate_BMI"
         android:layout_centerHorizontal="true"
         android:textSize="30sp"
         android:layout_marginTop="20dp"
-
+        android:background="@color/lightblue"
         />
         <TextView
+            android:id="@+id/txt_Bmi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@id/result"
             android:layout_centerHorizontal="true"
             android:textSize="35sp"
             android:text="@string/txt_BMI"
-            android:id="@+id/txt_Bmi"
+
         />
         <TextView
+            android:id="@+id/result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@id/message_underORoverWeight"
-            android:id="@+id/result"
             android:textSize="35sp"
             android:layout_centerHorizontal="true"
-            android:hint="@string/BMI_MessageShownHere"
             android:layout_margin="20dp"
              />
         <TextView
+            android:id="@+id/message_underORoverWeight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/message_underORoverWeight"
             android:layout_alignParentBottom="true"
-            android:text="@string/Message_OverUnderWeight"
             android:textSize="30sp"
             android:fontFamily="monospace"
             android:layout_centerHorizontal="true"
