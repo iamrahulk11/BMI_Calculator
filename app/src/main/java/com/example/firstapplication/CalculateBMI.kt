@@ -138,7 +138,6 @@ class CalculateBMI: AppCompatActivity(), OnClickListener {
                         this, "Please input Weight and Height Values greater than 0",
                         Toast.LENGTH_LONG).show()
                 }
-
                 //after calculating and displaying the result clearing the edit_view of height and weight
                 weight.text.clear()
                 height.text.clear()
