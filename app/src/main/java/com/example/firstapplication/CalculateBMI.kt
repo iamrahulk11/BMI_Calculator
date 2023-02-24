@@ -14,8 +14,8 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 
 class CalculateBMI: AppCompatActivity(), OnClickListener {
-    val tAG: String="FirstApplication"
-
+    val tAG: String="BMI_Calculator"
+//globally assign
     private lateinit var weight:EditText
     private lateinit var height:EditText
     private lateinit var button:Button
@@ -27,8 +27,6 @@ class CalculateBMI: AppCompatActivity(), OnClickListener {
         setContentView(R.layout.main_activity)
 
         Log.d(tAG, "onCreate()")
-
-
 
         //taking values from user by ID and saving it
         weight = findViewById(R.id.enterweight_1)
