@@ -5,4 +5,8 @@
     <string name="btn_Calculate_BMI">Calculate</string>
     <string name="txt_BMI">Your BMI is :</string>
     <string name="BMI_MessageShownHere">Result</string>
+    <string name="itemAboutApp">About App</string>
+    <string name="ItemDo_s_and_Don_t">Do\'s and Don\'t</string>
+    <string name="ItemExit">Exit</string>
+
 </resources>

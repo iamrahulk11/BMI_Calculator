@@ -4,17 +4,21 @@ import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.View.OnClickListener
 import android.view.View.VISIBLE
-
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import android.widget.Toolbar
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.firstapplication.databinding.MainActivityBinding
 
 class CalculateBMI: AppCompatActivity(), OnClickListener {
-    private val tAG: String = "BMI_Calculator"
+    val tAG: String = "BMI_Calculator"
 
     /*//globally assign
     private lateinit var weight:EditText
@@ -22,26 +26,26 @@ class CalculateBMI: AppCompatActivity(), OnClickListener {
     private lateinit var button:Button
     private lateinit var result:TextView
     private lateinit var result2:TextView*/
-    private var check: Boolean = false
+    var check: Boolean = false
     var heightValue = 0.0 //assigning value
     var weightValue = 0.0 //assigning value
-    private lateinit var context: Context
+    lateinit var context: Context
 
     //view binding created for main_activity for better performance
-    private lateinit var binding: MainActivityBinding
+    lateinit var binding: MainActivityBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         //inflating the layout
-        binding = MainActivityBinding.inflate(layoutInflater)
 
+        binding = MainActivityBinding.inflate(layoutInflater)
         //set the content view as binding root
         setContentView(binding.root)
 
         Log.d(tAG, "onCreate()")
-
+        context = this@CalculateBMI
         //taking values from user by ID and saving it
         /*weight = findViewById(R.id.enterweight_1)
         height = findViewById(R.id.enterheight_1)
@@ -66,6 +70,48 @@ class CalculateBMI: AppCompatActivity(), OnClickListener {
 
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+       // menuInflater.inflate(R.menu.menu_design,menu)
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu_design, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.item1 -> {
+                Toast.makeText(
+                    context, "Clicked About App",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+            R.id.item2 -> {
+                Toast.makeText(
+                    context, "Clicked Do's and Don't",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+            R.id.item3 -> {
+                val alertDialogBuilder = AlertDialog.Builder(this)
+                alertDialogBuilder.setTitle("Confirmation")
+                alertDialogBuilder.setMessage("Do you want to Exit?")
+                alertDialogBuilder.setPositiveButton("Yes"){
+                        Dialog,which ->
+                    finish()
+                }
+                alertDialogBuilder.setNegativeButton("No"){
+                        Dialog,which->
+                    Dialog.cancel()
+                }
+                val alertDialog: AlertDialog = alertDialogBuilder.create()
+                // Set other dialog properties
+                alertDialog.setCancelable(false)
+                alertDialog.show()
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     override fun onStart() {
         super.onStart()
         Log.d(tAG, "onStart()")
@@ -75,6 +121,26 @@ class CalculateBMI: AppCompatActivity(), OnClickListener {
         super.onResume()
         Log.d(tAG, "onResume()")
 
+    }
+
+
+    override fun onBackPressed() {
+       // super.onBackPressed()
+        val alertDialogBuilder = AlertDialog.Builder(this)
+        alertDialogBuilder.setTitle("Confirmation")
+        alertDialogBuilder.setMessage("Do you want to Exit?")
+        alertDialogBuilder.setPositiveButton("Yes"){
+            Dialog,which ->
+            finish()
+        }
+        alertDialogBuilder.setNegativeButton("No"){
+            Dialog,which->
+            Dialog.cancel()
+        }
+        val alertDialog: AlertDialog = alertDialogBuilder.create()
+        // Set other dialog properties
+        alertDialog.setCancelable(false)
+        alertDialog.show()
     }
 
     override fun onPause() {
@@ -132,27 +198,30 @@ class CalculateBMI: AppCompatActivity(), OnClickListener {
                         if(binding.enterheight1.text.toString().toInt() == 0 || binding.enterweight1.text.toString().toInt() == 0){
                             if(binding.enterheight1.text.toString().toInt() == 0 && binding.enterweight1.text.toString().toInt() == 0){
                                 Toast.makeText(
-                                    this, "Weight and Height Value should be greater than 0",
+                                    context, "Weight and Height Value should be greater than 0",
                                     Toast.LENGTH_LONG
                                 ).show()
                                 binding.enterweight1.text.clear()
                                 binding.enterheight1.text.clear()
                                 binding.enterweight1.requestFocus()
+                                return
                             }
                             else if(binding.enterweight1.text.toString().toInt()==0){
                                 Toast.makeText(
-                                    this, "Weight Value should be greater than 0",
+                                    context, "Weight Value should be greater than 0",
                                     Toast.LENGTH_LONG
                                 ).show()
                                 binding.enterweight1.text.clear()
                                 binding.enterweight1.requestFocus()
+                                return
                             }else{
                                 Toast.makeText(
-                                    this, "Height Value should be greater than 0",
+                                    context, "Height Value should be greater than 0",
                                     Toast.LENGTH_LONG
                                 ).show()
                                 binding.enterheight1.text.clear()
                                 binding.enterheight1.requestFocus()
+                                return
                             }
                         }else {
                             heightValue =
@@ -167,26 +236,29 @@ class CalculateBMI: AppCompatActivity(), OnClickListener {
                     }else{
                         if (binding.enterheight1.text.toString().isEmpty() && binding.enterweight1.text.toString().isEmpty() ) {
                             Toast.makeText(
-                                this, "Weight and Height Values should not be empty",
+                                context, "Weight and Height Values should not be empty",
                                 Toast.LENGTH_LONG
                             ).show()
                             binding.enterweight1.requestFocus()
+                            return
                             /*binding.enterheight1.text.clear()
                             binding.enterweight1.text.clear()*/
                         }
                         else if (binding.enterheight1.text.toString()
                                 .isEmpty()) {
                             Toast.makeText(
-                                this, "Height Value should not be empty",
+                                context, "Height Value should not be empty",
                                 Toast.LENGTH_LONG
                             ).show()
                             binding.enterheight1.requestFocus()
+                            return
                         }else if(binding.enterweight1.text.toString().isEmpty()) {
                             Toast.makeText(
-                                this, "Weight Value should not be empty",
+                                context, "Weight Value should not be empty",
                                 Toast.LENGTH_LONG
                             ).show()
                             binding.enterweight1.requestFocus()
+                            return
                         }
                     }
                     //calculating bmi and displaying it if height and weight is not 0
@@ -247,4 +319,5 @@ class CalculateBMI: AppCompatActivity(), OnClickListener {
             }
 
         }
+
 }
