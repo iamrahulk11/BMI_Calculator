@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.FirstApplication" parent="Theme.AppCompat.Light">
         <!-- Primary brand color. -->
-        <item name="colorPrimaryVariant">@color/nightmode</item>
+        <item name="colorPrimaryVariant">@color/night_mode</item>
         <item name="colorOnPrimary">#84C9FB</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -12,6 +12,13 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="Theme.BMINoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/night_mode</item>
+        <item name="colorPrimaryDark">@color/night_mode</item>
+        <item name="colorAccent">@color/night_mode</item>
+        <!-- Secondary brand color. -->
 
+    </style>
 
 </resources>

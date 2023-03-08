@@ -6,7 +6,8 @@
     <string name="txt_BMI">Your BMI is :</string>
     <string name="BMI_MessageShownHere">Result</string>
     <string name="itemAboutApp">About App</string>
-    <string name="ItemDo_s_and_Don_t">Do\'s and Don\'t</string>
     <string name="ItemExit">Exit</string>
+    <string name="Settings">BMI Chart</string>
+    <string name="aboutappText">This Application is created for learning purpose \n\nApplication is for calculating User\'s BMI(Body mass index) by using user\'s height and weight\n\nCreated by: Rahul Kumar\n</string>
 
 </resources>
