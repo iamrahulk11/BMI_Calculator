@@ -315,8 +315,7 @@ class CalculateBMI: AppCompatActivity(), OnClickListener {
                        */
                         //calling closeKeyboard function to close or hide after clicking the bmi calculator button (work completed)
                         closeKeyboard()
-                        binding.enterweight1.editText!!.text.clear()
-                        binding.enterweight1.editText!!.text.clear()
+                        finish()
                     }
                     //if height and weight is 0 and still click the bmi calculator button this message will arise(pop up)
                 }
