@@ -25,7 +25,7 @@ The following **extensions** are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='[https://j.gifs.com/gZ0RQZ.gif](https://gifs.com/gif/bmi-nR9N2D)' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://j.gifs.com/nR9N2D.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Notes
 
