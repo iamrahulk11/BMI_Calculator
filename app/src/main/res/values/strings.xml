@@ -9,5 +9,7 @@
     <string name="ItemExit">Exit</string>
     <string name="Settings">BMI Chart</string>
     <string name="aboutappText">This Application is created for learning purpose \n\nApplication is for calculating User\'s BMI(Body mass index) by using user\'s height and weight\n\nCreated by: Rahul Kumar\n</string>
+    <string name="txt_formula_to_calculate_bmi">Metric BMI Formula</string>
+    <string name="txt_information_about_bmi">Information About BMI</string>
 
 </resources>

@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".BmiChart"
     android:orientation="vertical"
     >
@@ -14,7 +18,7 @@
         android:layout_height="wrap_content">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            app:title="BMI Calculator"
+            app:title="BMI Chart"
             app:titleTextColor="@color/white"
             android:layout_width="match_parent"
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
@@ -24,22 +28,55 @@
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_information_about_bmi"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"/>
 
+    <ImageView
         android:id="@+id/imageview1"
+        android:layout_width="match_parent"
+
+        android:layout_height="281dp"
+        android:layout_marginTop="5dp"
         android:src="@drawable/bmichart1"
-        android:layout_marginTop="25dp"
 
         />
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="300dp"
 
         android:id="@+id/imageview2"
         android:src="@drawable/bmichart2"
-        android:layout_marginTop="5dp"
 
         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_formula_to_calculate_bmi"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/bmiformula"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/englishformula"
+        android:layout_marginBottom="20dp"/>
 </LinearLayout>
+</ScrollView>

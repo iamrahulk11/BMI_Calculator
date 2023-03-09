@@ -19,11 +19,16 @@ class BmiChart : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
     }
+
+    override fun onBackPressed() {
+        // super.onBackPressed()
+        finish()
+    }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         // menuInflater.inflate(R.menu.menu_design,menu)
         val inflater: MenuInflater = menuInflater
 
-        inflater.inflate(R.menu.menu_design, menu)
+        inflater.inflate(R.menu.menu_bmichart, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -32,10 +37,7 @@ class BmiChart : AppCompatActivity() {
             R.id.item1 -> {
                 val aboutActivity = Intent(this, AboutApp::class.java)
                 startActivity(aboutActivity)
-            }
-            R.id.item2 -> {
-                val bmiChartActivity = Intent(this, BmiChart::class.java)
-                startActivity(bmiChartActivity)
+                finish()
             }
             R.id.item3 -> {
                 val alertDialogBuilder = AlertDialog.Builder(this)

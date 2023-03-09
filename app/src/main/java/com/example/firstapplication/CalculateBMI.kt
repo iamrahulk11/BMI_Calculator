@@ -269,7 +269,7 @@ class CalculateBMI: AppCompatActivity(), OnClickListener {
                     if(heightValue > 0 && weightValue > 0) {
                         //calculating bmi using bmi formula with giving float values
                         val bmiValue =
-                            weightValue.toFloat() / ((heightValue.toFloat() / 100) * (heightValue.toFloat() / 100))
+                            weightValue / ((heightValue / 100) * (heightValue / 100))
                         //converting the values to string
                         val userBmi = String.format("%.2f", bmiValue).toFloat()
 

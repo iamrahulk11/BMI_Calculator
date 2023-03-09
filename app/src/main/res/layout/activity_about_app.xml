@@ -13,7 +13,7 @@
         android:layout_height="wrap_content">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            app:title="BMI Calculator"
+            app:title="About App"
             app:titleTextColor="@color/white"
             android:layout_width="match_parent"
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
@@ -23,9 +23,10 @@
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/aboutappText"
         android:textSize="20sp"
         android:fontFamily="monospace"
