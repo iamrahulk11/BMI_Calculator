@@ -21,15 +21,10 @@ The following **extensions** are implemented:
 * [x] Used Material Design
 * [ ] List anything else that you did to improve the app functionality or design!
 
-## Video Walkthrough
-
 Here's a walkthrough of implemented user stories:
 
 <img src='https://j.gifs.com/nR9N2D.gif' title='Video Walkthrough' width='300' alt='Video Walkthrough' />
 
-## Notes
-
-Describe any challenges encountered while building the app.
 
 ## License
 
